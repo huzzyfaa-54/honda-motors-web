@@ -1,51 +1,53 @@
 /* src/components/Navbar/Navbar.css */
 
-/* 
-  The main header wrapper. 
-  'display: flex' enables modern layout.
-  'justify-content: space-between' pushes the logo to the far left and links to the far right.
-  'align-items: center' ensures everything is vertically centered.
-  'position: sticky' keeps the nav at the top even when the user scrolls down.
-*/
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: var(--spacing-md) var(--spacing-lg);
+  padding: var(--spacing-md) var(--spacing-xl);
   background-color: var(--color-white);
   border-bottom: 1px solid var(--color-light-gray);
-  position: sticky;
-  top: 0;
-  z-index: 100; /* Ensures the navbar stays on top of other content */
+  position: relative;
+  z-index: 10;
 }
 
-/* 
-  Styling for the text logo. We will replace this with an image later.
-*/
-.logo {
-  font-size: 24px;
-  font-weight: bold;
-  color: var(--color-honda-red); /* Using our global Honda red variable */
-  letter-spacing: 1px;
+.navbar h1 {
+  color: var(--color-honda-red);
+  font-size: 1.8rem;
+  margin: 0;
+  cursor: pointer;
 }
 
-/* 
-  The unordered list holding our links. 
-  'gap' automatically adds space between each list item.
-*/
 .nav-links {
   display: flex;
+  list-style: none;
   gap: var(--spacing-lg);
+  margin: 0;
+  padding: 0;
 }
 
-/* 
-  Hover effects are crucial for modern UI/UX to show elements are clickable.
-*/
-.nav-item a {
+.nav-links li {
+  cursor: pointer;
   font-weight: 500;
-  transition: color 0.3s ease; /* Makes the color change smooth */
+  color: var(--color-black);
+  transition: color 0.2s ease;
 }
 
-.nav-item a:hover {
+.nav-links li:hover {
   color: var(--color-honda-red);
+}
+
+/* MEDIA QUERY: Mobile Responsiveness */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--spacing-md);
+  }
 }
