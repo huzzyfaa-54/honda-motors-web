@@ -1,26 +1,30 @@
 /* src/components/FeaturedVehicles/FeaturedVehicles.css */
 
-.featured-section {
-  padding: var(--spacing-xl) var(--spacing-lg);
-  max-width: 1200px; /* Prevents the grid from stretching too wide on massive monitors */
-  margin: 0 auto; /* Centers the section on the page */
-}
-
-.section-title {
+.search-container {
+  max-width: 500px;
+  margin: 0 auto var(--spacing-xl);
   text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: var(--spacing-lg);
 }
 
-/* 
-  CSS Grid Magic:
-  'repeat(auto-fit, minmax(250px, 1fr))' tells the browser:
-  "Create as many columns as will fit, but never let them get smaller than 250px. 
-  If they run out of room, wrap them to the next line."
-  This creates instant responsiveness without writing complex media queries!
-*/
-.vehicles-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: var(--spacing-lg);
+.search-input {
+  width: 100%;
+  padding: var(--spacing-md) var(--spacing-lg);
+  font-size: 1.1rem;
+  border: 2px solid var(--color-light-gray);
+  border-radius: 30px;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-input:focus {
+  border-color: var(--color-honda-red);
+  box-shadow: 0 4px 10px rgba(204, 0, 0, 0.1);
+}
+
+.no-results {
+  text-align: center;
+  color: var(--color-dark-gray);
+  font-size: 1.2rem;
+  grid-column: 1 / -1; /* Makes it span the whole grid */
+  padding: var(--spacing-xl);
 }
