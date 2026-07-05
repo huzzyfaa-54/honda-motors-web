@@ -1,0 +1,61 @@
+/* src/components/Footer/Footer.css */
+
+/* The main footer wrapper.
+  We use our dark gray variable for a sleek, premium look.
+*/
+.footer {
+  background-color: var(--color-dark-gray);
+  color: var(--color-white);
+  padding: var(--spacing-xl) var(--spacing-lg) var(--spacing-md);
+  margin-top: var(--spacing-xl);
+}
+
+/* Using CSS Grid to create responsive columns.
+  This works exactly like our vehicle grid! 
+  It will create columns that are at least 200px wide.
+*/
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-lg);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Styling the column headers */
+.footer-column h4 {
+  font-size: 1.2rem;
+  margin-bottom: var(--spacing-md);
+  color: var(--color-light-gray);
+  letter-spacing: 1px;
+}
+
+/* Stacking the links vertically */
+.footer-column ul {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.footer-column a {
+  color: var(--color-white);
+  font-size: 0.9rem;
+  opacity: 0.8;
+  transition: opacity 0.2s ease, color 0.2s ease;
+}
+
+/* Brighten the link and turn it Honda red on hover */
+.footer-column a:hover {
+  opacity: 1;
+  color: var(--color-honda-red);
+}
+
+/* The bottom copyright bar */
+.footer-bottom {
+  margin-top: var(--spacing-xl);
+  padding-top: var(--spacing-md);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+  font-size: 0.8rem;
+  opacity: 0.6;
+}
