@@ -27,7 +27,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         
         {/* The "/vehicle" URL renders our placeholder details page */}
-        <Route path="/vehicle" element={<VehicleDetails />} />
+        <Route path="/vehicle/:id" element={<VehicleDetails />} />
       </Routes>
 
       <Footer />

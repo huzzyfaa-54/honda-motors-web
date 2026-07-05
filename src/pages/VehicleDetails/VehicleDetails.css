@@ -1,0 +1,61 @@
+/* src/pages/VehicleDetails/VehicleDetails.css */
+
+.details-container {
+  max-width: 1000px;
+  margin: var(--spacing-xl) auto;
+  padding: var(--spacing-lg);
+  min-height: 60vh;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: var(--spacing-lg);
+  color: var(--color-dark-gray);
+  font-weight: bold;
+  transition: color 0.2s ease;
+}
+
+.back-link:hover {
+  color: var(--color-honda-red);
+}
+
+.details-card {
+  background-color: var(--color-light-gray);
+  padding: var(--spacing-xl);
+  border-radius: 8px;
+  text-align: center;
+  border: 1px solid #e0e0e0;
+}
+
+.details-title {
+  font-size: 3rem;
+  color: var(--color-black);
+  margin-bottom: var(--spacing-sm);
+}
+
+.details-price {
+  font-size: 1.5rem;
+  color: var(--color-honda-red);
+  margin-bottom: var(--spacing-lg);
+  font-weight: bold;
+}
+
+.details-desc {
+  font-size: 1.2rem;
+  color: var(--color-dark-gray);
+  margin-bottom: var(--spacing-xl);
+}
+
+.test-drive-btn {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  padding: var(--spacing-md) var(--spacing-xl);
+  font-size: 1.1rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.test-drive-btn:hover {
+  background-color: var(--color-honda-red);
+}
