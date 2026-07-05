@@ -1,0 +1,33 @@
+/* src/components/Watermark/Watermark.css */
+
+/* 
+  'position: fixed' locks the watermark to the browser window, so it stays in place even if the user scrolls.
+  'top: 50%' and 'left: 50%' combined with 'transform: translate(-50%, -50%)' perfectly centers the element on the screen.
+*/
+.watermark {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  /* 'vw' stands for Viewport Width. 20vw means the text will always be 20% of the screen's total width. This makes it highly responsive. */
+  font-size: 20vw;
+  font-weight: 900;
+  letter-spacing: 5px;
+  
+  color: var(--color-black);
+  opacity: 0.03; /* 3% visibility. It should be barely noticeable. */
+  
+  /* 'z-index: -1' forces this element to sit entirely behind the rest of our application. */
+  z-index: -1;
+  
+  /* SENIOR ENGINEER TRICK: 'pointer-events: none' is strictly required here. 
+     Without it, this massive invisible text box would sit on top of your page 
+     and block your mouse from clicking the Nav links or the Hero button! 
+  */
+  pointer-events: none;
+  
+  /* Prevents users from accidentally highlighting the watermark text */
+  user-select: none;
+  white-space: nowrap;
+}

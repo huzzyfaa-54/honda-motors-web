@@ -1,0 +1,43 @@
+/* src/styles/global.css */
+
+/* 1. CSS Variables (:root) */
+:root {
+  --color-honda-red: #cc0000;
+  --color-black: #1a1a1a;
+  --color-dark-gray: #333333;
+  --color-light-gray: #f4f4f4;
+  --color-white: #ffffff;
+  
+  --font-primary: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 32px;
+  --spacing-xl: 64px;
+}
+
+/* 2. CSS Reset */
+*, *::before, *::after {
+  box-sizing: border-box; /* Ensures padding doesn't increase element width */
+  margin: 0;
+  padding: 0;
+}
+
+/* 3. Base Body Styles */
+body {
+  font-family: var(--font-primary);
+  color: var(--color-black);
+  background-color: var(--color-white);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased; /* Makes text sharper on modern displays */
+}
+
+/* 4. Remove default list bullets and link underlines globally */
+ul, ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
