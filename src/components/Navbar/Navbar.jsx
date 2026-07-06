@@ -1,26 +1,39 @@
 // src/components/Navbar/Navbar.jsx
+import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
-// 1. Import useContext and our ThemeContext
-import { useContext } from 'react';
 import { ThemeContext } from '../../context/ThemeContext.jsx';
 import './Navbar.css';
 
 const Navbar = () => {
-  // 2. Pull exactly what we need out of the Global Brain
   const { isDarkMode, toggleTheme } = useContext(ThemeContext);
+  // 1. New State to track if the mobile menu is open
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  // 2. Toggle function
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
     <nav className="navbar">
-      <img src="/images/honda-logo.png" alt="Honda Logo" className="nav-logo" />
+      <Link to="/" onClick={() => setIsMenuOpen(false)}>
+        <img src="/images/honda-logo.png" alt="Honda Logo" className="nav-logo" />
+      </Link>
       
-      <ul className="nav-links">
-        <li>Vehicles</li>
-        <li><Link to="/build" style={{ textDecoration: 'none', color: 'inherit' }}>Build & Price</Link></li>
-        <li>Owners</li>
-        <li>Find a Dealer</li>
+      {/* 3. The Hamburger Icon (Hidden on Desktop) */}
+      <div className={`hamburger ${isMenuOpen ? 'open' : ''}`} onClick={toggleMenu}>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      
+      {/* 4. The Links (Slide in on Mobile) */}
+      <ul className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
+        <li><Link to="/" onClick={toggleMenu} style={{ textDecoration: 'none', color: 'inherit' }}>Vehicles</Link></li>
+        <li><Link to="/build" onClick={toggleMenu} style={{ textDecoration: 'none', color: 'inherit' }}>Build & Price</Link></li>
+        <li><Link to="/" onClick={toggleMenu} style={{ textDecoration: 'none', color: 'inherit' }}>Owners</Link></li>
+        <li><Link to="/" onClick={toggleMenu} style={{ textDecoration: 'none', color: 'inherit' }}>Find a Dealer</Link></li>
       </ul>
 
-      {/* 3. The Theme Toggle Button */}
+      {/* Theme Toggle */}
       <button 
         onClick={toggleTheme} 
         style={{
@@ -30,7 +43,8 @@ const Navbar = () => {
           padding: '5px 15px',
           cursor: 'pointer',
           color: isDarkMode ? '#fff' : '#000',
-          fontWeight: 'bold'
+          fontWeight: 'bold',
+          zIndex: 101 /* Keeps button clickable on mobile */
         }}
       >
         {isDarkMode ? '☀️ Light' : '🌙 Dark'}
