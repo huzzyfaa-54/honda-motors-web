@@ -7,12 +7,12 @@ const Footer = () => {
     <footer className="premium-footer">
       <div className="footer-content">
         
-        {/* Left Side: Brand Statement */}
+        {/* Left Side: Brand Statement (Now Text Only) */}
         <div className="footer-brand">
           <div className="footer-logo-container">
-            {/* The invert filter makes the black logo white! */}
-            <img src="/images/honda-logo.png" alt="Honda" className="footer-logo" style={{ filter: 'brightness(0) invert(1)' }} />
-            <span className="footer-brand-name">HONDA</span>
+            <span className="footer-brand-name" style={{ fontSize: '1.5rem', letterSpacing: '4px' }}>
+              HONDA
+            </span>
           </div>
           <p className="footer-tagline">
             The Power of Dreams. Excellence in Japanese automotive engineering.
