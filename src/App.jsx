@@ -1,15 +1,18 @@
-// Example of how your Home.jsx should look:
+// Make sure Navbar is imported at the top!
+import Navbar from "./components/Navbar/Navbar"; 
 import Hero from "./components/Hero/Hero";
 import FeaturedVehicles from "./components/FeaturedVehicles/FeaturedVehicles";
 import Experience from "./components/Experience/Experience";
 import WhyHonda from "./components/WhyHonda/WhyHonda";
 import Footer from "./components/Footer/Footer";
 
-const Home = () => {
+const App = () => {
   return (
     <div>
+      {/* THIS IS THE CRITICAL LINE WE WERE MISSING! */}
+      <Navbar /> 
+      
       <Hero />
-      {/* Ensure your FeaturedVehicles title says "New Arrivals" in its own component! */}
       <FeaturedVehicles /> 
       <Experience />
       <WhyHonda />
@@ -18,4 +21,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default App;

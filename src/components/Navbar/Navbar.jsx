@@ -9,12 +9,15 @@ const Navbar = () => {
 
   return (
     <nav className="navbar premium-nav">
-      {/* Left: Logo */}
-      <Link to="/" onClick={() => setIsMenuOpen(false)} className="nav-logo-container">
-        <img src="/images/honda-logo.png" alt="Honda Logo" className="nav-logo" />
+      
+      {/* 1. Left: Logo (Now Text) */}
+      <Link to="/" onClick={() => setIsMenuOpen(false)} className="nav-logo-container" style={{ textDecoration: 'none' }}>
+        <span style={{ color: 'white', fontSize: '1.2rem', fontWeight: '700', letterSpacing: '3px' }}>
+          HONDA
+        </span>
       </Link>
       
-      {/* Middle: Links */}
+      {/* 2. Middle: Links */}
       <ul className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
         <li><Link to="/" onClick={toggleMenu}>Models</Link></li>
         <li><Link to="/" onClick={toggleMenu}>New Arrivals</Link></li>
@@ -22,7 +25,7 @@ const Navbar = () => {
         <li><Link to="/" onClick={toggleMenu}>About</Link></li>
       </ul>
 
-      {/* Right: Utility Icons (Search, Heart, Account) */}
+      {/* 3. Right: Utility Icons (Search, Heart, Account) */}
       <div className="nav-utilities">
         <button className="icon-btn" aria-label="Search">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -50,7 +53,7 @@ const Navbar = () => {
         </button>
       </div>
       
-      {/* Mobile Hamburger */}
+      {/* 4. Mobile Hamburger */}
       <div className={`hamburger ${isMenuOpen ? 'open' : ''}`} onClick={toggleMenu}>
         <span></span>
         <span></span>
