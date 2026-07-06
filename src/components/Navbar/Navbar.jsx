@@ -1,4 +1,5 @@
 // src/components/Navbar/Navbar.jsx
+import { Link } from 'react-router-dom';
 // 1. Import useContext and our ThemeContext
 import { useContext } from 'react';
 import { ThemeContext } from '../../context/ThemeContext.jsx';
@@ -14,7 +15,7 @@ const Navbar = () => {
       
       <ul className="nav-links">
         <li>Vehicles</li>
-        <li>Shopping Tools</li>
+        <li><Link to="/build" style={{ textDecoration: 'none', color: 'inherit' }}>Build & Price</Link></li>
         <li>Owners</li>
         <li>Find a Dealer</li>
       </ul>

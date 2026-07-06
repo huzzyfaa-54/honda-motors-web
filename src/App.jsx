@@ -1,5 +1,5 @@
 // src/App.jsx
-
+import Configurator from './pages/Configurator/Configurator.jsx';
 // Import the Route components from the library
 import { Routes, Route } from 'react-router-dom';
 
@@ -27,7 +27,7 @@ const App = () => {
       <Routes>
         {/* The root URL ("/") renders the Home page */}
         <Route path="/" element={<Home />} />
-        
+        <Route path="/build" element={<Configurator />} />
         {/* The "/vehicle/:id" URL renders our dynamic details page */}
         <Route path="/vehicle/:id" element={<VehicleDetails />} />
       </Routes>
