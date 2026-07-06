@@ -1,26 +1,34 @@
-// src/components/Hero/Hero.jsx
-
 import './Hero.css';
 
-/**
- * Hero Component
- * Renders the massive top banner for the landing page.
- */
 const Hero = () => {
   return (
-    // <section> is used for a thematic grouping of content
-    <section className="hero">
-      
-      <h1 className="hero-title">The All-New Civic</h1>
-      <p className="hero-subtitle">Power meets pure efficiency.</p>
-      
-      {/* This is our Call to Action. Later, we can add an onClick event 
-        to navigate the user to the Civic's specific details page.
-      */}
-      <button className="hero-cta">
-        Explore the Civic
-      </button>
+    <section className="premium-hero">
+      {/* Note: You will need a dark, moody picture of a Honda here! */}
+      <div className="hero-background">
+        <img src="/images/honda-dark-hero.jpg" alt="Honda Flagship" className="hero-img" />
+        <div className="hero-overlay"></div>
+      </div>
 
+      <div className="hero-content">
+        <div className="hero-badge">
+          <span>★</span> THE NEW 2025 COLLECTION
+        </div>
+        
+        <h1 className="hero-title">
+          The Power of <br />
+          <span className="text-accent">Dreams.</span>
+        </h1>
+        
+        <p className="hero-subtitle">
+          Experience the pinnacle of Japanese engineering. Every detail crafted 
+          to perfection, every journey transformed into an event.
+        </p>
+        
+        <div className="hero-actions">
+          <button className="btn-primary">Explore Models →</button>
+          <button className="btn-secondary">Book Test Drive</button>
+        </div>
+      </div>
     </section>
   );
 };

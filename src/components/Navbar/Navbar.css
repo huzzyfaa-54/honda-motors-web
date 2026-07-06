@@ -1,108 +1,70 @@
 /* src/components/Navbar/Navbar.css */
 
-/* --- DESKTOP STYLES --- */
-.navbar {
+.premium-nav {
+  position: absolute; 
+  top: 0;
+  left: 0;
+  width: 100%;
   display: flex;
-  justify-content: space-between; /* Pushes Logo left, Links center, Button right */
+  justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
-  background-color: #fff;
-  border-bottom: 1px solid #ddd;
+  padding: 1.5rem 5%; /* Changed to % for better ultra-wide screen alignment */
+  background: linear-gradient(to bottom, rgba(0,0,0,0.9), transparent); 
+  border-bottom: none;
+  z-index: 100;
+  box-sizing: border-box;
 }
 
 .nav-logo {
-  height: 35px;
+  height: 24px; /* Slightly smaller for that premium luxury feel */
   width: auto;
   cursor: pointer;
   transition: opacity 0.2s ease;
+  /* Removed the invert filter so it doesn't become a white box */
 }
-
 .nav-logo:hover {
   opacity: 0.7;
 }
 
 .nav-links {
   display: flex;
-  gap: 2rem;
+  gap: 2.5rem;
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.nav-links li {
-  cursor: pointer;
-  font-weight: 500;
-  color: #1a1a1a;
-  transition: color 0.2s ease;
+.nav-links li a {
+  font-size: 0.85rem; /* Slightly smaller text */
+  letter-spacing: 1px; /* Spaced out letters look more expensive */
+  text-transform: uppercase; /* Mercedes uses uppercase for nav */
 }
 
-.nav-links li:hover {
-  color: #cc0000; /* Honda Red */
+.nav-links li a:hover {
+  color: var(--accent-color);
 }
 
-/* Base Hamburger Styles (Hidden on Desktop) */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-  gap: 6px;
-  z-index: 101; 
-}
-
+/* Mobile Hamburger lines */
 .hamburger span {
   width: 30px;
-  height: 3px;
-  background-color: #1a1a1a;
+  height: 2px;
+  background-color: var(--text-primary);
   transition: transform 0.3s ease, opacity 0.3s ease;
-  border-radius: 2px;
 }
 
-body.dark-mode .hamburger span {
-  background-color: #f5f5f5;
-}
-
-/* --- MOBILE RESPONSIVE NAV --- */
 @media (max-width: 768px) {
-  
-  .hamburger {
-    display: flex;
-  }
-
-  /* Hide the links off-screen by default */
+  .premium-nav { padding: 1.5rem 2rem; }
+  .hamburger { display: flex; }
   .nav-links {
     position: absolute;
-    top: 70px; 
-    left: -100%; 
+    top: 70px;
+    left: -100%;
     flex-direction: column;
     width: 100%;
-    background-color: #fff;
-    text-align: center;
+    background-color: var(--bg-main);
     padding: 2rem 0;
     transition: left 0.4s ease;
-    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
-    z-index: 100;
+    border-bottom: 1px solid var(--border-color);
   }
-
-  body.dark-mode .nav-links {
-    background-color: #1a1a1a;
-    box-shadow: 0 10px 15px rgba(0,0,0,0.5);
-  }
-
-  /* This class slides the menu onto the screen */
-  .nav-links.active {
-    left: 0; 
-  }
-
-  /* Hamburger Animation (Turns into an 'X') */
-  .hamburger.open span:nth-child(1) {
-    transform: rotate(45deg) translateY(12px) translateX(1px);
-  }
-  
-  .hamburger.open span:nth-child(2) {
-    opacity: 0; 
-  }
-  
-  .hamburger.open span:nth-child(3) {
-    transform: rotate(-45deg) translateY(-12px) translateX(1px);
-  }
+  .nav-links.active { left: 0; }
 }

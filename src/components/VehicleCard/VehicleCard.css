@@ -1,62 +1,114 @@
 /* src/components/VehicleCard/VehicleCard.css */
 
-.vehicle-card {
-  background-color: var(--color-white);
-  border-radius: 12px; /* Smoother, rounder corners */
+.premium-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.premium-card:hover {
+  transform: translateY(-5px); /* Gentle float effect */
+  border-color: var(--accent-color);
+}
+
+.card-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  background-color: #000;
+}
+
+/* The sleek 'NEW' Badge */
+.new-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background-color: var(--accent-color);
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  z-index: 2;
+  letter-spacing: 1px;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8;
+  transition: opacity 0.3s ease, transform 0.5s ease;
+}
+
+.premium-card:hover .card-image {
+  opacity: 1;
+  transform: scale(1.03); /* Slight zoom on hover */
+}
+
+.card-content {
   padding: 1.5rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-  /* The transition makes the hover effect smooth instead of instant */
-  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s ease;
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
 }
 
-/* The Lift Effect */
-.vehicle-card:hover {
-  transform: translateY(-10px); /* Lifts the card up 10 pixels */
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12); /* Adds a deeper shadow */
+.card-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  letter-spacing: 1px;
 }
 
-.vehicle-card img {
-  border-radius: 8px;
-  transition: transform 0.5s ease;
+.card-price {
+  font-weight: 700;
+  font-size: 1.1rem;
 }
 
-/* Subtle image zoom on hover */
-.vehicle-card:hover img {
-  transform: scale(1.03);
+.text-accent {
+  color: var(--accent-color);
 }
 
-.vehicle-name {
+.card-title {
   font-size: 1.4rem;
   font-weight: 700;
-  margin: 1rem 0 0.5rem;
+  color: var(--text-primary);
+  margin: 0;
+  letter-spacing: -0.5px;
 }
 
-.vehicle-price {
-  color: var(--color-honda-red);
-  font-weight: 600;
-  font-size: 1.1rem;
-  margin-bottom: 0.5rem;
+.card-specs {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
 }
 
-.vehicle-desc {
-  color: #666;
-  font-size: 0.95rem;
-  line-height: 1.5;
-  margin-bottom: 1.5rem;
-}
-
-.vehicle-btn {
-  background-color: var(--color-black);
-  color: var(--color-white);
-  padding: 0.8rem 1.5rem;
+.card-btn {
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  padding: 1rem;
   border-radius: 6px;
-  font-weight: 600;
-  transition: background-color 0.2s ease, transform 0.2s ease;
-  width: 100%;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.vehicle-btn:hover {
-  background-color: var(--color-honda-red);
-  transform: scale(1.02); /* Slight button pop */
+.card-btn:hover {
+  background-color: rgba(229, 0, 0, 0.05); /* Very subtle red glow */
+  border-color: var(--accent-color);
+  color: var(--accent-color);
 }

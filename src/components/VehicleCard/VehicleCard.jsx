@@ -1,26 +1,37 @@
 // src/components/VehicleCard/VehicleCard.jsx
-
-import { Link } from 'react-router-dom';
 import './VehicleCard.css';
 
 const VehicleCard = ({ vehicle }) => {
+  // 1. SAFE FALLBACKS: If a property is missing, use these defaults instead of crashing!
+  const price = vehicle.basePrice || vehicle.price || 25000; 
+  const image = vehicle.image || '/images/honda-dark-hero.jpg'; 
+  const name = vehicle.name || 'Honda Vehicle';
+
   return (
-    <article className="vehicle-card">
-      {/* Add the image tag right at the top of the card! */}
-      <img 
-        src={vehicle.image} 
-        alt={`A photo of the Honda ${vehicle.name}`} 
-        style={{ width: '100%', height: '200px', objectFit: 'cover', borderRadius: '4px' }}
-      />
+    <div className="vehicle-card premium-card">
+      <div className="card-image-wrapper">
+        <div className="new-badge">NEW</div>
+        <img src={image} alt={name} className="card-image" />
+      </div>
       
-      <h3 className="vehicle-name">{vehicle.name}</h3>
-      <p className="vehicle-price">Starting at {vehicle.price}</p>
-      <p className="vehicle-desc">{vehicle.description}</p>
-      
-      <Link to={`/vehicle/${vehicle.id}`} className="vehicle-btn" style={{ textAlign: 'center', textDecoration: 'none', display: 'inline-block' }}>
-        View Details
-      </Link>
-    </article>
+      <div className="card-content">
+        <div className="card-meta">
+          <span>2025 • SIGNATURE</span>
+          <span className="card-price text-accent">${price.toLocaleString()}</span>
+        </div>
+        
+        <h3 className="card-title">{name}</h3>
+        
+        <div className="card-specs">
+          <span>⚡ 158 hp</span>
+          <span>⛽ Hybrid/Petrol</span>
+        </div>
+        
+        <button className="card-btn">
+          View Details <span>→</span>
+        </button>
+      </div>
+    </div>
   );
 };
 

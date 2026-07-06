@@ -1,70 +1,43 @@
-/* Add this to your global CSS file */
+/* src/index.css */
 
-body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  letter-spacing: -0.3px; 
-  color: #1a1a1a;
-  margin: 0; 
-  padding: 0;
+/* 1. The Premium Global Variables (Mercedes-Benz Style) */
+:root {
+  --bg-main: #050505; /* Pitch black */
+  --bg-section: #0a0a0a; 
+  --bg-card: #111111; 
+  --text-primary: #ffffff;
+  --text-secondary: #a1a1aa; 
   
-  /* THIS IS THE MAGIC LINE */
-  background-color: #f0f0f5; 
+  /* Changed from Mercedes Blue to Honda Type-R Red to match your image! */
+  --accent-color: #e50000; 
+  --accent-hover: #b30000;
+  
+  --border-color: #27272a; 
+}
+/* 2. Base Body Styles (Permanently Dark & Premium) */
+body {
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* The Sleek Background Watermark */
+/* 3. The Sleek Background Watermark */
 .global-watermark {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 22vw; /* Massive text that scales with the screen */
+  font-size: 22vw; 
   font-weight: 900;
-  color: rgba(0, 0, 0, 0.03); /* 3% opacity - incredibly subtle */
-  z-index: -1; /* Pushes it behind absolutely everything */
-  pointer-events: none; /* Stops it from blocking clicks */
+  /* Changed to a very faint white so it glows subtly against the black background */
+  color: rgba(255, 255, 255, 0.02); 
+  z-index: -1; 
+  pointer-events: none; 
   white-space: nowrap;
   user-select: none;
 }
-/* src/index.css */
 
-/* --- DARK MODE OVERRIDES --- */
-body.dark-mode {
-  background-color: #121212;
-  color: #f5f5f5;
-}
-
-/* Make the watermark lighter in dark mode */
-body.dark-mode .global-watermark {
-  color: rgba(255, 255, 255, 0.03);
-}
-
-/* Darken the Navbar */
-body.dark-mode .navbar {
-  background-color: #1a1a1a;
-  border-bottom: 1px solid #333;
-}
-
-/* Make navbar links white */
-body.dark-mode .nav-links li {
-  color: #f5f5f5;
-}
-
-/* Darken the Vehicle Cards */
-body.dark-mode .vehicle-card {
-  background-color: #1e1e1e;
-  border-color: #333;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-}
-
-/* Whiten the text on the cards */
-body.dark-mode .vehicle-card .vehicle-name,
-body.dark-mode .vehicle-card .vehicle-desc,
-body.dark-mode .hero-title,
-body.dark-mode .hero-subtitle {
-  color: #f5f5f5;
-}
-
-/* Invert the logo color (Makes the black Honda logo white) */
-body.dark-mode .nav-logo {
-  filter: invert(1);
-}
+/* Note: All old .dark-mode overrides have been deleted because the site is now permanently in Premium Mode! */
