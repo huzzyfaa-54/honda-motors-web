@@ -1,52 +1,63 @@
 // src/components/Footer/Footer.jsx
-
+import { Link } from 'react-router-dom';
 import './Footer.css';
 
 const Footer = () => {
-  // Using an object to store our column data keeps the JSX very clean
-  const footerLinks = {
-    vehicles: ['Civic', 'Accord', 'CR-V', 'Pilot', 'Odyssey'],
-    shopping: ['Build & Price', 'Search Inventory', 'Offers & Leases'],
-    support: ['Owner Link', 'Recall Information', 'Contact Us']
-  };
-
   return (
-    // <footer> is the semantic tag for the bottom section of a page
-    <footer className="footer">
+    <footer className="premium-footer">
       <div className="footer-content">
         
-        <div className="footer-column">
-          <h4>Vehicles</h4>
-          <ul>
-            {footerLinks.vehicles.map((link, index) => (
-              <li key={index}><a href="#">{link}</a></li>
-            ))}
-          </ul>
+        {/* Left Side: Brand Statement */}
+        <div className="footer-brand">
+          <div className="footer-logo-container">
+            {/* The invert filter makes the black logo white! */}
+            <img src="/images/honda-logo.png" alt="Honda" className="footer-logo" style={{ filter: 'brightness(0) invert(1)' }} />
+            <span className="footer-brand-name">HONDA</span>
+          </div>
+          <p className="footer-tagline">
+            The Power of Dreams. Excellence in Japanese automotive engineering.
+          </p>
         </div>
 
-        <div className="footer-column">
-          <h4>Shopping Tools</h4>
-          <ul>
-            {footerLinks.shopping.map((link, index) => (
-              <li key={index}><a href="#">{link}</a></li>
-            ))}
-          </ul>
-        </div>
+        {/* Right Side: Link Columns */}
+        <div className="footer-links-grid">
+          
+          <div className="footer-column">
+            <h4>Models</h4>
+            <ul>
+              <li><Link to="/">Civic</Link></li>
+              <li><Link to="/">Accord</Link></li>
+              <li><Link to="/">CR-V</Link></li>
+              <li><Link to="/">Pilot</Link></li>
+              <li><Link to="/">Odyssey</Link></li>
+            </ul>
+          </div>
 
-        <div className="footer-column">
-          <h4>Support</h4>
-          <ul>
-            {footerLinks.support.map((link, index) => (
-              <li key={index}><a href="#">{link}</a></li>
-            ))}
-          </ul>
-        </div>
+          <div className="footer-column">
+            <h4>Shopping Tools</h4>
+            <ul>
+              <li><Link to="/build">Build & Price</Link></li>
+              <li><Link to="/">Search Inventory</Link></li>
+              <li><Link to="/">Offers & Leases</Link></li>
+            </ul>
+          </div>
 
+          <div className="footer-column">
+            <h4>Support</h4>
+            <ul>
+              <li><Link to="/">Owner Link</Link></li>
+              <li><Link to="/">Recall Information</Link></li>
+              <li><Link to="/">Contact Us</Link></li>
+            </ul>
+          </div>
+
+        </div>
       </div>
 
+      {/* Bottom Bar */}
       <div className="footer-bottom">
-        {/* Dynamic year ensures the copyright is always up to date */}
-        <p>&copy; {new Date().getFullYear()} Honda Motors Concept. Built for learning purposes.</p>
+        <p>© 2026 Honda Motors Concept. All rights reserved.</p>
+        <p className="footer-version">DBMS Platform v2.5</p>
       </div>
     </footer>
   );

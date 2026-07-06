@@ -1,0 +1,79 @@
+.why-section {
+  background-color: var(--bg-main);
+  padding: 6rem 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-subtitle {
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--accent-color);
+}
+
+.section-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0.5rem 0 0 0;
+  letter-spacing: -1px;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.why-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 2.5rem;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.why-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent-color);
+}
+
+.icon-wrapper {
+  width: 48px;
+  height: 48px;
+  background-color: rgba(229, 0, 0, 0.05); /* Very subtle red background */
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.icon-wrapper svg {
+  width: 24px;
+  height: 24px;
+  color: var(--accent-color);
+}
+
+.why-card h3 {
+  color: var(--text-primary);
+  font-size: 1.25rem;
+  margin: 0 0 1rem 0;
+}
+
+.why-card p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}

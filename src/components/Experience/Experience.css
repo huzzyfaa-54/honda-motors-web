@@ -1,0 +1,59 @@
+.experience-section {
+  background-color: var(--bg-section);
+  padding: 6rem 5%;
+}
+
+.exp-header {
+  text-align: left;
+  margin-bottom: 3rem;
+}
+
+.exp-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 1.5rem;
+}
+
+.exp-card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  height: 280px;
+  border: 1px solid var(--border-color);
+  cursor: pointer;
+}
+
+.exp-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.7;
+  transition: opacity 0.4s ease, transform 0.6s ease;
+}
+
+.exp-card:hover .exp-img {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.exp-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 2rem 1.5rem 1.5rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+  pointer-events: none;
+}
+
+.exp-content h3 {
+  color: var(--text-primary);
+  font-size: 1.3rem;
+  margin: 0 0 0.3rem 0;
+}
+
+.exp-content p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin: 0;
+}

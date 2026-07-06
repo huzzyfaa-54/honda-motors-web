@@ -8,20 +8,25 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem 5%; /* Changed to % for better ultra-wide screen alignment */
+  padding: 1.5rem 5%;
   background: linear-gradient(to bottom, rgba(0,0,0,0.9), transparent); 
   border-bottom: none;
   z-index: 100;
   box-sizing: border-box;
 }
 
+.nav-logo-container {
+  display: flex;
+  align-items: center;
+}
+
 .nav-logo {
-  height: 24px; /* Slightly smaller for that premium luxury feel */
+  height: 24px; 
   width: auto;
   cursor: pointer;
   transition: opacity 0.2s ease;
-  /* Removed the invert filter so it doesn't become a white box */
 }
+
 .nav-logo:hover {
   opacity: 0.7;
 }
@@ -35,16 +40,96 @@
 }
 
 .nav-links li a {
-  font-size: 0.85rem; /* Slightly smaller text */
-  letter-spacing: 1px; /* Spaced out letters look more expensive */
-  text-transform: uppercase; /* Mercedes uses uppercase for nav */
+  font-size: 0.85rem; 
+  letter-spacing: 1px; 
+  font-weight: 500;
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
 
 .nav-links li a:hover {
   color: var(--accent-color);
 }
 
-/* Mobile Hamburger lines */
+/* --- NEW: Utility Icons Styles --- */
+.nav-utilities {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.icon-btn, .user-profile-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  transition: color 0.2s ease;
+}
+
+.icon-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+.icon-btn:hover {
+  color: var(--accent-color);
+}
+
+.user-profile-btn {
+  gap: 0.5rem;
+}
+
+.user-icon-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  /* This creates the signature outline using your Honda Red variable! */
+  border: 1px solid rgba(229, 0, 0, 0.4); 
+  background-color: rgba(229, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.user-icon-circle svg {
+  width: 18px;
+  height: 18px;
+  color: var(--accent-color);
+}
+
+.user-profile-btn:hover .user-icon-circle {
+  border-color: var(--accent-color);
+  background-color: rgba(229, 0, 0, 0.1);
+}
+
+.chevron {
+  width: 16px;
+  height: 16px;
+  color: var(--text-secondary);
+}
+
+.user-profile-btn:hover .chevron {
+  color: var(--text-primary);
+}
+
+/* --- Hamburger for Mobile --- */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 101;
+}
+
 .hamburger span {
   width: 30px;
   height: 2px;
@@ -52,19 +137,32 @@
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-@media (max-width: 768px) {
-  .premium-nav { padding: 1.5rem 2rem; }
-  .hamburger { display: flex; }
+/* Mobile Responsiveness */
+@media (max-width: 992px) {
   .nav-links {
-    position: absolute;
-    top: 70px;
-    left: -100%;
-    flex-direction: column;
-    width: 100%;
-    background-color: var(--bg-main);
-    padding: 2rem 0;
-    transition: left 0.4s ease;
-    border-bottom: 1px solid var(--border-color);
+    display: none; /* Hide links on tablet/mobile to keep it clean */
   }
-  .nav-links.active { left: 0; }
+  .hamburger {
+    display: flex;
+  }
+  .nav-links.active {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(5, 5, 5, 0.98);
+    gap: 2rem;
+    z-index: 90;
+  }
+}
+
+@media (max-width: 576px) {
+  .nav-utilities {
+    display: none; /* Hide utility icons on tiny phones to save space */
+  }
 }
