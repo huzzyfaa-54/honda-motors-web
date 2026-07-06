@@ -11,11 +11,15 @@
   z-index: 10;
 }
 
-.navbar h1 {
-  color: var(--color-honda-red);
-  font-size: 1.8rem;
-  margin: 0;
+.nav-logo {
+  height: 35px; /* Keeps the logo perfectly sized */
+  width: auto;
   cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.nav-logo:hover {
+  opacity: 0.7; /* Slight fade when hovered */
 }
 
 .nav-links {

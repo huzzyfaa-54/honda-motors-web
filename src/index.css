@@ -1,10 +1,14 @@
 /* Add this to your global CSS file */
 
 body {
-  /* Upgrading to a clean, modern system font stack */
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  letter-spacing: -0.3px; /* Tighter letter spacing looks more premium */
+  letter-spacing: -0.3px; 
   color: #1a1a1a;
+  margin: 0; 
+  padding: 0;
+  
+  /* THIS IS THE MAGIC LINE */
+  background-color: #f0f0f5; 
 }
 
 /* The Sleek Background Watermark */
