@@ -2,8 +2,18 @@
 
 .search-container {
   max-width: 500px;
-  margin: 0 auto var(--spacing-xl);
-  text-align: center;
+  /* margin: 0 auto centers the container itself */
+  margin: 0 auto 3rem auto; 
+  
+  /* Flexbox guarantees the input inside stays perfectly centered */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* THE BUG FIX: This pulls the search bar to the "front" 
+     so floating cards slide BEHIND it, not over it */
+  position: relative;
+  z-index: 10; 
 }
 
 .search-input {

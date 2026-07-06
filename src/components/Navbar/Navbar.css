@@ -2,13 +2,11 @@
 
 .navbar {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* Pushes Logo left, Links center, Button right */
   align-items: center;
-  padding: var(--spacing-md) var(--spacing-xl);
-  background-color: var(--color-white);
-  border-bottom: 1px solid var(--color-light-gray);
-  position: relative;
-  z-index: 10;
+  padding: 1rem 2rem;
+  background-color: #fff; /* We'll let Dark Mode override this automatically */
+  border-bottom: 1px solid #ddd;
 }
 
 .nav-logo {
@@ -24,8 +22,8 @@
 
 .nav-links {
   display: flex;
+  gap: 2rem; /* THIS is what fixes the squished text! */
   list-style: none;
-  gap: var(--spacing-lg);
   margin: 0;
   padding: 0;
 }
