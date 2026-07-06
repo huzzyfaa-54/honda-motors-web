@@ -22,18 +22,15 @@ const Configurator = () => {
 
   const totalPrice = activeCar.basePrice + activeColor.premium;
 
-  // --- NEW: THE PRELOADER ENGINE ---
-  // useEffect runs exactly once when this page first loads
+  // --- THE PRELOADER ENGINE (Task 4) ---
   useEffect(() => {
     carModels.forEach((car) => {
       paintColors.forEach((color) => {
-        // We create an invisible HTML image element in the background
         const img = new Image();
-        // Telling the browser the source forces it to download and cache the file silently!
         img.src = `/images/${car.id}-${color.id}.jpg`;
       });
     });
-  }, []); // The empty array means "only run this on the initial load"
+  }, []); 
 
   return (
     <div className="configurator-page">
@@ -95,6 +92,18 @@ const Configurator = () => {
                   className={`swatch ${activeColor.id === color.id ? 'active-swatch' : ''}`}
                   style={{ backgroundColor: color.hex }}
                   onClick={() => setActiveColor(color)}
+                  
+                  /* --- ENTERPRISE ACCESSIBILITY (A11Y) UPGRADES (Task 5) --- */
+                  role="button" 
+                  tabIndex="0" 
+                  aria-label={`Select ${color.name} paint`} 
+                  aria-pressed={activeColor.id === color.id} 
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault();
+                      setActiveColor(color);
+                    }
+                  }}
                 ></div>
               ))}
             </div>
