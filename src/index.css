@@ -1,43 +1,24 @@
 /* src/index.css */
+html {
+  scroll-behavior: smooth;
+}
 
-/* 1. The Premium Global Variables (Mercedes-Benz Style) */
+/* ... keep the rest of your existing CSS variables and styles below ... */
 :root {
-  --bg-main: #050505; /* Pitch black */
+  --bg-main: #050505;
   --bg-section: #0a0a0a; 
   --bg-card: #111111; 
   --text-primary: #ffffff;
   --text-secondary: #a1a1aa; 
-  
-  /* Changed from Mercedes Blue to Honda Type-R Red to match your image! */
   --accent-color: #e50000; 
   --accent-hover: #b30000;
-  
   --border-color: #27272a; 
 }
-/* 2. Base Body Styles (Permanently Dark & Premium) */
+
 body {
   background-color: var(--bg-main);
   color: var(--text-primary);
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'Inter', sans-serif;
   margin: 0;
   padding: 0;
-  -webkit-font-smoothing: antialiased;
 }
-
-/* 3. The Sleek Background Watermark */
-.global-watermark {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 22vw; 
-  font-weight: 900;
-  /* Changed to a very faint white so it glows subtly against the black background */
-  color: rgba(255, 255, 255, 0.02); 
-  z-index: -1; 
-  pointer-events: none; 
-  white-space: nowrap;
-  user-select: none;
-}
-
-/* Note: All old .dark-mode overrides have been deleted because the site is now permanently in Premium Mode! */

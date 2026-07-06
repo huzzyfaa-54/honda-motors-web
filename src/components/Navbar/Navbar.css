@@ -1,18 +1,26 @@
 /* src/components/Navbar/Navbar.css */
 
+/* src/components/Navbar/Navbar.css */
+
 .premium-nav {
-  position: absolute; 
+  /* CHANGED: From absolute to fixed so it follows the user! */
+  position: fixed; 
   top: 0;
   left: 0;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem 5%;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.9), transparent); 
-  border-bottom: none;
-  z-index: 100;
-  box-sizing: border-box;
+  padding: 1.2rem 5%;
+  
+  /* NEW: Glassmorphism effect */
+  background: rgba(0, 0, 0, 0.7); 
+  backdrop-filter: blur(10px); 
+  -webkit-backdrop-filter: blur(10px); 
+  
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 1000; /* Ensures it stays on top of everything */
+  transition: all 0.3s ease;
 }
 
 .nav-logo-container {

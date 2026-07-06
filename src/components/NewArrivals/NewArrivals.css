@@ -1,0 +1,17 @@
+/* src/components/NewArrivals/NewArrivals.css */
+.new-arrivals {
+  padding: 4rem 5%;
+  background-color: #000;
+  color: white;
+}
+
+.new-arrivals h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.vehicles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}

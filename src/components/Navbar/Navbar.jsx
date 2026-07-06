@@ -10,8 +10,16 @@ const Navbar = () => {
   return (
     <nav className="navbar premium-nav">
       
-      {/* 1. Left: Logo (Now Text) */}
-      <Link to="/" onClick={() => setIsMenuOpen(false)} className="nav-logo-container" style={{ textDecoration: 'none' }}>
+      {/* 1. Left: Logo */}
+      <Link 
+        to="/" 
+        onClick={() => {
+          setIsMenuOpen(false);
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }} 
+        className="nav-logo-container" 
+        style={{ textDecoration: 'none' }}
+      >
         <span style={{ color: 'white', fontSize: '1.2rem', fontWeight: '700', letterSpacing: '3px' }}>
           HONDA
         </span>
@@ -19,13 +27,16 @@ const Navbar = () => {
       
       {/* 2. Middle: Links */}
       <ul className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
-        <li><Link to="/" onClick={toggleMenu}>Models</Link></li>
-        <li><Link to="/" onClick={toggleMenu}>New Arrivals</Link></li>
-        <li><Link to="/" onClick={toggleMenu}>Dealerships</Link></li>
-        <li><Link to="/" onClick={toggleMenu}>About</Link></li>
+        {/* These use # IDs to scroll to sections */}
+        <li><a href="#explore-lineup" onClick={toggleMenu}>Models</a></li>
+        <li><a href="#new-arrivals" onClick={toggleMenu}>New Arrivals</a></li>
+        
+        {/* These keep using React Router for actual page navigation */}
+        <li><Link to="/dealerships" onClick={toggleMenu}>Dealerships</Link></li>
+        <li><Link to="/about" onClick={toggleMenu}>About</Link></li>
       </ul>
 
-      {/* 3. Right: Utility Icons (Search, Heart, Account) */}
+      {/* 3. Right: Utility Icons */}
       <div className="nav-utilities">
         <button className="icon-btn" aria-label="Search">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
