@@ -1,4 +1,5 @@
 // src/App.jsx
+import NotFound from './pages/NotFound/NotFound.jsx';
 import Configurator from './pages/Configurator/Configurator.jsx';
 // Import the Route components from the library
 import { Routes, Route } from 'react-router-dom';
@@ -30,6 +31,8 @@ const App = () => {
         <Route path="/build" element={<Configurator />} />
         {/* The "/vehicle/:id" URL renders our dynamic details page */}
         <Route path="/vehicle/:id" element={<VehicleDetails />} />
+        {/* THE 404 CATCH-ALL ROUTE */}
+      <Route path="*" element={<NotFound />} />
       </Routes>
 
       <Footer />

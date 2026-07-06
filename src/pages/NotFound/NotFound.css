@@ -1,0 +1,49 @@
+/* src/pages/NotFound/NotFound.css */
+
+.not-found-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  text-align: center;
+  padding: 2rem;
+}
+
+.not-found-page h1 {
+  font-size: 6rem;
+  color: #cc0000; /* Honda Red */
+  margin: 0;
+  letter-spacing: -2px;
+}
+
+.not-found-page h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.not-found-page p {
+  color: #666;
+  font-size: 1.1rem;
+}
+
+/* Specific Dark Mode overrides for the 404 text */
+body.dark-mode .not-found-page p {
+  color: #aaa;
+}
+
+.return-home-btn {
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  background-color: #cc0000;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.return-home-btn:hover {
+  background-color: #a30000;
+  transform: translateY(-2px);
+}
