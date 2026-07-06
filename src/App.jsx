@@ -5,7 +5,6 @@ import { Routes, Route } from 'react-router-dom';
 
 // Import our Global/Layout Components
 import Navbar from './components/Navbar/Navbar.jsx';
-import Watermark from './components/Watermark/Watermark.jsx';
 import Footer from './components/Footer/Footer.jsx';
 
 // Import our Page Views
@@ -14,8 +13,11 @@ import VehicleDetails from './pages/VehicleDetails/VehicleDetails.jsx';
 
 const App = () => {
   return (
-    <main>
-      <Watermark />
+    <div className="app-container">
+      
+      {/* Our new sleek global watermark goes right here at the top! */}
+      <div className="global-watermark">HONDA</div>
+      
       <Navbar />
       
       {/* The <Routes> tag tells React to look at the URL and only render 
@@ -26,12 +28,12 @@ const App = () => {
         {/* The root URL ("/") renders the Home page */}
         <Route path="/" element={<Home />} />
         
-        {/* The "/vehicle" URL renders our placeholder details page */}
+        {/* The "/vehicle/:id" URL renders our dynamic details page */}
         <Route path="/vehicle/:id" element={<VehicleDetails />} />
       </Routes>
 
       <Footer />
-    </main>
+    </div>
   );
 };
 

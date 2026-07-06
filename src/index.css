@@ -1,0 +1,23 @@
+/* Add this to your global CSS file */
+
+body {
+  /* Upgrading to a clean, modern system font stack */
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  letter-spacing: -0.3px; /* Tighter letter spacing looks more premium */
+  color: #1a1a1a;
+}
+
+/* The Sleek Background Watermark */
+.global-watermark {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 22vw; /* Massive text that scales with the screen */
+  font-weight: 900;
+  color: rgba(0, 0, 0, 0.03); /* 3% opacity - incredibly subtle */
+  z-index: -1; /* Pushes it behind absolutely everything */
+  pointer-events: none; /* Stops it from blocking clicks */
+  white-space: nowrap;
+  user-select: none;
+}

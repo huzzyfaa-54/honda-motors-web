@@ -28,5 +28,21 @@ export const vehiclesData = [
     price: "$37,090",
     description: "Rugged styling with space for up to eight.",
     image: "/images/pilot.jpg"
+  },
+  
+  {
+    id: 5,
+    name: "City",
+    price: "$21,550",
+    description: "The premium compact sedan built for the urban lifestyle.",
+    image: "/images/city.jpg" 
+  },
+  {
+    id: 6,
+    name: "HR-V",
+    price: "$25,100",
+    description: "Sporty, versatile, and ready for your next adventure.",
+    image: "/images/hrv.jpg"
   }
+
 ];

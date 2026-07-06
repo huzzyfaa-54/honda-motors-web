@@ -1,55 +1,62 @@
 /* src/components/VehicleCard/VehicleCard.css */
 
-/* 
-  We use a card design with a subtle border and shadow. 
-  'display: flex' with 'column' keeps the text stacked neatly.
-*/
 .vehicle-card {
   background-color: var(--color-white);
-  border: 1px solid var(--color-light-gray);
-  border-radius: 8px;
-  padding: var(--spacing-lg);
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-sm);
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  border-radius: 12px; /* Smoother, rounder corners */
+  padding: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  /* The transition makes the hover effect smooth instead of instant */
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-/* Elevate the card slightly when the user hovers over it */
+/* The Lift Effect */
 .vehicle-card:hover {
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-  transform: translateY(-5px);
+  transform: translateY(-10px); /* Lifts the card up 10 pixels */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12); /* Adds a deeper shadow */
+}
+
+.vehicle-card img {
+  border-radius: 8px;
+  transition: transform 0.5s ease;
+}
+
+/* Subtle image zoom on hover */
+.vehicle-card:hover img {
+  transform: scale(1.03);
 }
 
 .vehicle-name {
-  font-size: 1.5rem;
-  color: var(--color-black);
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 1rem 0 0.5rem;
 }
 
 .vehicle-price {
-  font-size: 1.1rem;
   color: var(--color-honda-red);
-  font-weight: bold;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
 }
 
 .vehicle-desc {
-  color: var(--color-dark-gray);
+  color: #666;
   font-size: 0.95rem;
-  flex-grow: 1; /* Pushes the button to the bottom if descriptions vary in length */
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
 }
 
 .vehicle-btn {
-  margin-top: var(--spacing-md);
-  padding: var(--spacing-sm) var(--spacing-md);
-  background-color: transparent;
-  color: var(--color-black);
-  border: 2px solid var(--color-black);
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.2s ease;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  padding: 0.8rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  width: 100%;
 }
 
 .vehicle-btn:hover {
-  background-color: var(--color-black);
-  color: var(--color-white);
+  background-color: var(--color-honda-red);
+  transform: scale(1.02); /* Slight button pop */
 }
