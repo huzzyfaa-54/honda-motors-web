@@ -29,11 +29,17 @@ const FeaturedVehicles = () => {
         />
       </div>
 
-      <div className="vehicles-grid">
+      <motion.div 
+        className="vehicles-grid"
+        initial={{ opacity: 0, y: 30 }} 
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.1 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+      >
         {displayedVehicles.map((vehicle) => (
           <VehicleCard key={vehicle.id} vehicle={vehicle} />
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 };

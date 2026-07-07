@@ -9,11 +9,17 @@ const NewArrivals = () => {
   return (
     <section id="new-arrivals" className="new-arrivals">
       <h2>New Arrivals</h2>
-      <div className="vehicles-grid">
+      <motion.div 
+        className="vehicles-grid"
+        initial={{ opacity: 0, y: 30 }} 
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.1 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+      >
         {arrivals.map((vehicle) => (
           <VehicleCard key={vehicle.id} vehicle={vehicle} />
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 };
