@@ -1,0 +1,7 @@
+.about-page { background-color: #000; min-height: 100vh; color: #fff; padding: 40px 10%; }
+.about-nav a { color: #888; text-decoration: none; font-size: 0.9rem; }
+.about-hero { text-align: center; padding: 100px 0; }
+.about-hero h1 { font-size: 4rem; letter-spacing: 2px; }
+.about-content { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 50px; }
+.about-card { padding: 40px; background: #0a0a0a; border: 1px solid #222; }
+.about-card h2 { color: #e50000; margin-bottom: 20px; }

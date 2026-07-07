@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
+import AboutPage from "./pages/AboutPage/AboutPage";
 import Hero from './components/Hero/Hero';
 import NewArrivals from './components/NewArrivals/NewArrivals';
 import FeaturedVehicles from './components/FeaturedVehicles/FeaturedVehicles';
@@ -25,6 +26,7 @@ const App = () => {
     <Router>
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/about" element={<AboutPage />} />
         <Route path="/dealerships" element={<LoginPage />} />
       </Routes>
     </Router>

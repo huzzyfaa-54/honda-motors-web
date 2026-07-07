@@ -32,6 +32,7 @@ const Navbar = () => {
         <li><a href="#new-arrivals" onClick={toggleMenu}>New Arrivals</a></li>
         
         {/* These keep using React Router for actual page navigation */}
+        <li><Link to="/about" onClick={toggleMenu}>About</Link></li>
         <li><Link to="/dealerships" onClick={toggleMenu}>Dealerships</Link></li>
         <li><Link to="/about" onClick={toggleMenu}>About</Link></li>
       </ul>
