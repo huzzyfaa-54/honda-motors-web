@@ -2,7 +2,7 @@
 export const vehiclesData = [
   { 
     id: 1, 
-    name: "Civic Sedan", 
+    name: "Civic", 
     price: "$23,950", 
     description: "Sleek, efficient, and packed with features.", 
     image: "/images/civic.jpg",
