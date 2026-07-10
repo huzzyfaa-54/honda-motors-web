@@ -1,34 +1,13 @@
 .premium-nav {
-  position: fixed; 
-  top: 0;
-  left: 0;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  
-  /* This ensures it respects the iPhone's notch/side areas */
-  padding-left: 20px;
-  padding-right: calc(20px + env(safe-area-inset-right));
-  
-  background: rgba(0, 0, 0, 0.7); 
-  backdrop-filter: blur(10px); 
-  z-index: 1000;
+  position: fixed; top: 0; left: 0; width: 100%; height: 80px;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 0 5%; background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px); z-index: 1000;
 }
 
 .hamburger {
-  display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 44px; /* Increased width for a bigger tap target */
-  height: 44px; /* Increased height for a bigger tap target */
-  padding: 12px; /* Internal padding creates the space between lines */
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  z-index: 101;
-  /* Use negative margin to pull it slightly left without moving the background container */
-  margin-right: 5px;
+  display: none; flex-direction: column; justify-content: space-between;
+  width: 30px; height: 18px; border: none; background: transparent; cursor: pointer;
 }
 
 .hamburger span {
