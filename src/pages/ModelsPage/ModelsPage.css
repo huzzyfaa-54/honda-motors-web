@@ -1,0 +1,22 @@
+.models-page { background: #050505; min-height: 100vh; padding: 120px 5% 50px; color: white; }
+.models-header { text-align: center; margin-bottom: 60px; }
+.models-header h1 { font-size: 3rem; color: white; }
+.models-header p { color: #888; font-size: 1.1rem; }
+
+.models-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+
+.model-card { background: #111; border: 1px solid #222; border-radius: 12px; overflow: hidden; transition: 0.3s; }
+.model-card:hover { border-color: #E10600; }
+.card-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover; /* This makes the image fill the area without distortion */
+  border-bottom: 2px solid #E10600; /* Subtle red detail */
+}
+.card-content { padding: 20px; }
+.card-content h3 { color: white; margin-bottom: 10px; }
+
+.btn-details { 
+  background: #E10600; color: white; border: none; padding: 10px 20px; 
+  cursor: pointer; font-weight: bold; margin-top: 15px; 
+}

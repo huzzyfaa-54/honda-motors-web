@@ -8,10 +8,21 @@ const Navbar = () => {
 
   return (
     <nav className="navbar premium-nav">
-      <Link to="/" className="nav-logo-container" style={{ textDecoration: 'none' }}>
-        <span style={{ color: 'white', fontSize: '1.2rem', fontWeight: '700', letterSpacing: '3px' }}>HONDA</span>
-      </Link>
-      
+     <Link 
+  to="/" 
+  onClick={() => {
+    // 1. Close menu if it's open
+    setIsMenuOpen(false); 
+    // 2. Smooth scroll to top
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }} 
+  className="nav-logo-container" 
+  style={{ textDecoration: 'none' }}
+>
+  <span style={{ color: 'white', fontSize: '1.2rem', fontWeight: '700', letterSpacing: '3px' }}>
+    HONDA
+  </span>
+</Link>
       {/* FORCE HORIZONTAL LAYOUT WITH INLINE STYLES */}
       <ul className={`nav-links ${isMenuOpen ? 'active' : ''}`} style={{ display: 'flex', flexDirection: 'row', listStyle: 'none', gap: '2rem', margin: 0, padding: 0 }}>
         <li><a href="#explore-lineup" onClick={toggleMenu} style={{ color: 'white', textDecoration: 'none' }}>Models</a></li>

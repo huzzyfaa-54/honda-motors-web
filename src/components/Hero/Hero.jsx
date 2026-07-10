@@ -1,9 +1,10 @@
+import React from 'react';
+import { Link } from 'react-router-dom'; // 1. Import Link
 import './Hero.css';
 
 const Hero = () => {
   return (
     <section className="premium-hero">
-      {/* Note: You will need a dark, moody picture of a Honda here! */}
       <div className="hero-background">
         <img src="/images/honda-dark-hero.jpg" alt="Honda Flagship" className="hero-img" />
         <div className="hero-overlay"></div>
@@ -25,7 +26,11 @@ const Hero = () => {
         </p>
         
         <div className="hero-actions">
-          <button className="btn-primary">Explore Models →</button>
+          {/* 2. Wrap the primary button in a Link tag */}
+          <Link to="/models">
+            <button className="btn-primary">Explore Models →</button>
+          </Link>
+          
           <button className="btn-secondary">Book Test Drive</button>
         </div>
       </div>

@@ -27,9 +27,7 @@ const VehicleCard = ({ vehicle }) => {
           <span>⛽ Hybrid/Petrol</span>
         </div>
         
-        <button className="card-btn">
-          View Details <span>→</span>
-        </button>
+        
       </div>
     </div>
   );

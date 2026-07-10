@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
-import { vehiclesData } from '../../data/vehicles.js';
+// Add curly braces here:
+import { vehiclesData } from '../../data/vehicles';
 import VehicleCard from '../VehicleCard/VehicleCard.jsx';
 import './NewArrivals.css';
 
