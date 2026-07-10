@@ -6,18 +6,29 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* INCREASED RIGHT PADDING: This pushes the menu icon further left */
-  padding: 1.2rem 24px; 
+  
+  /* This ensures it respects the iPhone's notch/side areas */
+  padding-left: 20px;
+  padding-right: calc(20px + env(safe-area-inset-right));
+  
   background: rgba(0, 0, 0, 0.7); 
   backdrop-filter: blur(10px); 
   z-index: 1000;
 }
 
 .hamburger {
-  /* ... existing styles ... */
-  /* ADD THIS: Ensures the icon has a larger clickable area */
-  padding: 10px; 
-  margin-right: -10px; /* Counter-act padding to keep visual alignment */
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 44px; /* Increased width for a bigger tap target */
+  height: 44px; /* Increased height for a bigger tap target */
+  padding: 12px; /* Internal padding creates the space between lines */
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 101;
+  /* Use negative margin to pull it slightly left without moving the background container */
+  margin-right: 5px;
 }
 
 .hamburger span {
