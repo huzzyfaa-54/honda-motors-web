@@ -112,3 +112,22 @@
   border-color: var(--accent-color);
   color: var(--accent-color);
 }
+.vehicle-card {
+  background: #111;
+  border: 1px solid #333;
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+}
+
+.year-badge { font-size: 0.75rem; color: #888; margin-bottom: 5px; }
+.vehicle-name { font-size: 1.5rem; margin: 5px 0; }
+.vehicle-price { color: #ff0000; font-weight: bold; font-size: 1.2rem; }
+
+.specs-row {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #ccc;
+}
