@@ -1,13 +1,23 @@
 .premium-nav {
-  position: fixed; top: 0; left: 0; width: 100%; height: 80px;
-  display: flex; justify-content: space-between; align-items: center;
-  padding: 0 5%; background: rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(10px); z-index: 1000;
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* INCREASED RIGHT PADDING: This pushes the menu icon further left */
+  padding: 1.2rem 24px; 
+  background: rgba(0, 0, 0, 0.7); 
+  backdrop-filter: blur(10px); 
+  z-index: 1000;
 }
 
 .hamburger {
-  display: none; flex-direction: column; justify-content: space-between;
-  width: 30px; height: 18px; border: none; background: transparent; cursor: pointer;
+  /* ... existing styles ... */
+  /* ADD THIS: Ensures the icon has a larger clickable area */
+  padding: 10px; 
+  margin-right: -10px; /* Counter-act padding to keep visual alignment */
 }
 
 .hamburger span {
