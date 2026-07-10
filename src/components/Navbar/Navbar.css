@@ -1,63 +1,21 @@
-/* src/components/Navbar/Navbar.css */
-
 .premium-nav {
-  position: fixed; 
-  top: 0;
-  left: 0;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  
-  /* FIXED: Increased horizontal padding to ensure icons don't hit the screen edge */
-  padding: 1.2rem 24px; 
-  
-  background: rgba(0, 0, 0, 0.7); 
-  backdrop-filter: blur(10px); 
-  -webkit-backdrop-filter: blur(10px); 
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  z-index: 1000;
-  transition: all 0.3s ease;
-  box-sizing: border-box; /* Ensures padding doesn't break width */
+  position: fixed; top: 0; left: 0; width: 100%; height: 80px;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 0 5%; background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px); z-index: 1000;
 }
 
-/* ... keep your nav-logo-container and nav-links styles as they are ... */
-
-/* --- Hamburger for Mobile --- */
 .hamburger {
-  display: none;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 30px;
-  height: 20px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  z-index: 101;
-  /* FIXED: Added margin to separate it from the screen edge */
-  margin-right: 8px; 
+  display: none; flex-direction: column; justify-content: space-between;
+  width: 30px; height: 18px; border: none; background: transparent; cursor: pointer;
 }
 
-/* Mobile Responsiveness */
+.hamburger span {
+  display: block; width: 30px; height: 3px;
+  background-color: #ffffff !important; border-radius: 0 !important;
+}
+
 @media (max-width: 992px) {
-  .nav-links {
-    display: none;
-  }
-  .hamburger {
-    display: flex;
-  }
-}
-
-@media (max-width: 576px) {
-  /* FIXED: Ensure utilities don't disappear if you still want them */
-  /* If you want to hide them, keep it, but if you want them visible, change to flex */
-  .nav-utilities {
-    display: flex; 
-    gap: 1rem;
-  }
-  
-  /* Ensure the nav doesn't crowd the mobile screen */
-  .premium-nav {
-    padding: 1rem 20px;
-  }
+  .nav-links { display: none !important; }
+  .hamburger { display: flex !important; }
 }
