@@ -1,14 +1,15 @@
 import { motion } from 'framer-motion';
-// Add curly braces here:
 import { vehiclesData } from '../../data/vehicles';
 import VehicleCard from '../VehicleCard/VehicleCard.jsx';
 import './NewArrivals.css';
 
 const NewArrivals = () => {
+  // Filtering your data for the specific arrivals
   const arrivals = vehiclesData.filter(v => v.id >= 7 && v.id <= 9);
   
   return (
-    <section id="new-arrivals" className="new-arrivals">
+    // Changed id to match the Navbar exactly: 'new-arrivals-section'
+    <section id="new-arrivals-section" className="new-arrivals">
       <h2>New Arrivals</h2>
       <motion.div 
         className="vehicles-grid"
@@ -24,4 +25,5 @@ const NewArrivals = () => {
     </section>
   );
 };
+
 export default NewArrivals;
