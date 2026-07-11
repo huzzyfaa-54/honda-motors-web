@@ -3,6 +3,6 @@
     "rootDirectory": "server"
   },
   "deploy": {
-    "startCommand": "npm start"
+    "startCommand": "node index.js"
   }
 }
