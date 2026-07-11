@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import '../LoginPage/LoginPage.css';
 const SignupPage = () => {
   const [formData, setFormData] = useState({ username: '', password: '' });
   const [loading, setLoading] = useState(false);
@@ -35,36 +35,30 @@ const SignupPage = () => {
   };
 
   return (
-    <div style={{ paddingTop: '150px', display: 'flex', justifyContent: 'center' }}>
-      <form className="login-box" onSubmit={handleSignup} style={{ background: '#111', padding: '40px', borderRadius: '8px' }}>
-        <h2 style={{ color: 'white' }}>Create Account</h2>
+    <div className="login-container">
+      <form className="login-box" onSubmit={handleSignup}>
+        <h2>Create Account</h2>
         
         <input 
+          className="login-input"
           type="text" 
           placeholder="Username" 
-          value={formData.username} // Added value
+          value={formData.username}
           onChange={(e) => setFormData({...formData, username: e.target.value})} 
-          style={{ display: 'block', marginBottom: '10px', padding: '8px' }} 
         />
         
         <input 
+          className="login-input"
           type="password" 
           placeholder="Password" 
-          value={formData.password} // Added value
+          value={formData.password}
           onChange={(e) => setFormData({...formData, password: e.target.value})} 
-          style={{ display: 'block', marginBottom: '20px', padding: '8px' }} 
         />
         
         <button 
           type="submit" 
+          className="login-button"
           disabled={loading}
-          style={{ 
-            background: loading ? '#555' : 'red', 
-            color: 'white', 
-            border: 'none', 
-            padding: '10px 20px', 
-            cursor: loading ? 'not-allowed' : 'pointer' 
-          }}
         >
           {loading ? 'Registering...' : 'Register'}
         </button>

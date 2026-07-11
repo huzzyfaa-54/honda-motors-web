@@ -1,15 +1,18 @@
-import Hero from '../../components/Hero/Hero.jsx';
-import FeaturedVehicles from '../../components/FeaturedVehicles/FeaturedVehicles.jsx';
-import { Link } from 'react-router-dom';
+import React from 'react';
+import Hero from '../../components/Hero/Hero';
+import NewArrivals from '../../components/NewArrivals/NewArrivals';
+import FeaturedVehicles from '../../components/FeaturedVehicles/FeaturedVehicles';
+import Experience from '../../components/Experience/Experience';
+import WhyHonda from '../../components/WhyHonda/WhyHonda';
 
 const Home = () => {
   return (
     <>
-      {/* We wrap the Hero in a Link, or ensure the button inside Hero points to /models */}
-      {/* Option A: If your Hero component has a button, navigate to /models */}
       <Hero />
-      
+      <NewArrivals />
       <FeaturedVehicles />
+      <Experience />
+      <WhyHonda />
     </>
   );
 };
