@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom'; // Added Link
+import { useNavigate, Link } from 'react-router-dom';
 import './LoginPage.css';
+import { API_BASE_URL } from './config';
 
 const LoginPage = () => {
   const [formData, setFormData] = useState({ username: '', password: '' });
@@ -9,7 +10,8 @@ const LoginPage = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://192.168.1.15:5000/api/login', {
+      // Use API_BASE_URL here
+      const response = await fetch(`${API_BASE_URL}/api/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
@@ -32,20 +34,14 @@ const LoginPage = () => {
       <form className="login-box" onSubmit={handleLogin}>
         <h2>Login</h2>
         <input 
-          className="login-input"
-          type="text" 
-          placeholder="Username" 
+          className="login-input" type="text" placeholder="Username" 
           onChange={(e) => setFormData({...formData, username: e.target.value})} 
         />
         <input 
-          className="login-input"
-          type="password" 
-          placeholder="Password" 
+          className="login-input" type="password" placeholder="Password" 
           onChange={(e) => setFormData({...formData, password: e.target.value})} 
         />
         <button type="submit" className="login-button">Sign In</button>
-        
-        {/* Added the missing link back */}
         <p style={{ color: '#aaa', marginTop: '15px', textAlign: 'center', fontSize: '14px' }}>
           Don't have an account? <Link to="/signup" style={{ color: '#e60012' }}>Sign up here</Link>
         </p>

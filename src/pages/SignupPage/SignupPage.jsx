@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../LoginPage/LoginPage.css';
+import { API_BASE_URL } from './config'; // Make sure the path is correct
+
 const SignupPage = () => {
   const [formData, setFormData] = useState({ username: '', password: '' });
   const [loading, setLoading] = useState(false);
@@ -8,16 +10,16 @@ const SignupPage = () => {
 
   const handleSignup = async (e) => {
     e.preventDefault();
-    setLoading(true); // Disable button to prevent double-submits
+    setLoading(true);
     
     try {
-    const response = await fetch('http://192.168.1.15:5000/api/login', {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json',
-  },
-  body: JSON.stringify(formData),
-});
+      // Use API_BASE_URL here
+      const response = await fetch(`${API_BASE_URL}/api/signup`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      
       const result = await response.json();
       
       if (response.ok) {
@@ -28,7 +30,7 @@ const SignupPage = () => {
       }
     } catch (err) {
       console.error("Signup error:", err);
-      alert("Server is unreachable. Make sure your backend is running.");
+      alert("Server is unreachable.");
     } finally {
       setLoading(false);
     }
@@ -38,28 +40,17 @@ const SignupPage = () => {
     <div className="login-container">
       <form className="login-box" onSubmit={handleSignup}>
         <h2>Create Account</h2>
-        
         <input 
-          className="login-input"
-          type="text" 
-          placeholder="Username" 
+          className="login-input" type="text" placeholder="Username" 
           value={formData.username}
           onChange={(e) => setFormData({...formData, username: e.target.value})} 
         />
-        
         <input 
-          className="login-input"
-          type="password" 
-          placeholder="Password" 
+          className="login-input" type="password" placeholder="Password" 
           value={formData.password}
           onChange={(e) => setFormData({...formData, password: e.target.value})} 
         />
-        
-        <button 
-          type="submit" 
-          className="login-button"
-          disabled={loading}
-        >
+        <button type="submit" className="login-button" disabled={loading}>
           {loading ? 'Registering...' : 'Register'}
         </button>
       </form>

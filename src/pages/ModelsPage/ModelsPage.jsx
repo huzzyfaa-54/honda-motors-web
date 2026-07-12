@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import VehicleModal from '../../components/VehicleModal/VehicleModal';
 import './ModelsPage.css';
+import { API_BASE_URL } from './config'; // Make sure the path is correct
 
 const ModelsPage = () => {
   const [vehicles, setVehicles] = useState([]);
   const [selectedVehicle, setSelectedVehicle] = useState(null);
 
-  // This runs when the page loads
   useEffect(() => {
-    fetch('http://localhost:5000/api/vehicles')
+    // Use API_BASE_URL here
+    fetch(`${API_BASE_URL}/api/vehicles`)
       .then(res => res.json())
       .then(data => setVehicles(data))
       .catch(err => console.error("Error fetching data:", err));
