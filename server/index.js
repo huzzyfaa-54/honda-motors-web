@@ -7,9 +7,9 @@ const app = express();
 
 // Middleware
 app.use(cors({
-    origin: "*", 
-    methods: ["GET", "POST"],
-    credentials: true
+  origin: 'https://honda-motors-web-2fz8.vercel.app', 
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true
 }));
 app.use(express.json());
 
