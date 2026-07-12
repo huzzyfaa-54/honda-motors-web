@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import VehicleModal from '../../components/VehicleModal/VehicleModal';
 import './ModelsPage.css';
-import { API_BASE_URL } from './config'; // Make sure the path is correct
+import { API_BASE_URL } from "../../config"; // Make sure the path is correct
 
 const ModelsPage = () => {
   const [vehicles, setVehicles] = useState([]);

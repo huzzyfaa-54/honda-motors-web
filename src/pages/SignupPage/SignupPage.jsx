@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../LoginPage/LoginPage.css';
-import { API_BASE_URL } from './config'; // Make sure the path is correct
+import { API_BASE_URL } from "../../config"; // Make sure the path is correct
 
 const SignupPage = () => {
   const [formData, setFormData] = useState({ username: '', password: '' });
